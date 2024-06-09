@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Energia hidráulica - N3JV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wave-container {
+            padding-top: 20%;
+            position: relative;
+        }
+
+
+        .blue-background {
+            position: absolute;
+            top: calc(100% - 3vh);
+            width: 100%;
+            height: 265vh;
+            background: #0099ff;
+        }
+
+        .video {
+            position: absolute;
+            /* Posicionamento absoluto para o vídeo */
+            top: 50%;
+            /* Centraliza verticalmente */
+            left: 50%;
+            /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%);
+            /* Aplique a transformação para centralizar */
+            z-index: 1;
+            /* Certifique-se de que o vídeo fique acima das ondas */
+            width: 860px;
+            /* Largura do vídeo */
+            height: 615px;
+            /* Altura do vídeo */
+        }
+
+        .video iframe {
+            width: 806px;
+            height: 515px;
+            border-radius: 15px;
+            box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+        }
+
+        .BgTexto {
+            /* From https://css.glass */
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5.5px);
+            -webkit-backdrop-filter: blur(5.5px);
+            padding: 3%;
+            margin: 0 auto;
+            text-align: center;
+            width: 80%;
+            margin-bottom: 2%;
+        }
+
+        .texto {
+            text-align: justify;
+            padding-bottom: 50px;
+        }
+
+        .texto p, li {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+        }
+
+        .texto h3, h4 {
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .texto h3{
+            font-size: 30pt;
+            color: aliceblue;
+        }
+
+        .texto h4{
+            font-size: 20pt;
+            color: rgb(214, 214, 214);
+        }
+
+        footer {
+            position: relative;
+            top: 350px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #333;
+        }
+
+        .container-bc {
+            background: rgba(0, 204, 255, 0.22);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(7.2px);
+            -webkit-backdrop-filter: blur(7.2px);
+            margin-top: 1%;
+            position: fixed;
+            z-index: 2;
+        }
+
+        .container-bc a {
+            color: black;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .breadCrumb {
+            background-color: transparent;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 0 0;
+            margin: 5px;
+            content: none;
+            list-style-type: none;
+            /* Remove bullets */
+
+        }
+
+        ul {
+            display: flex;
+        }
+
+        .breadCrumb-item {
+            margin: 3px;
+            padding: 6px 16px;
+            margin-right: 4%;
+
+        }
+
+        .breadCrumb-item-active {
+            background-color: #0099ff;
+            border-radius: 12px;
+            transition: ease-in;
+        }
+
+        .list-group-item {
+            background-color: transparent;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            .breadCrumb {
+                height: 100%;
+            }
+
+            .breadCrumb-item {
+                margin: 0;
+                padding: 0px;
+                margin-right: 4%;
+
+            }
+
+            .wave-container {
+                padding-top: 40%;
+                position: relative;
+            }
+
+
+            .blue-background {
+                position: absolute;
+                top: calc(100% - 1vh);
+                width: 100%;
+                height: 670vh;
+                background: #0099ff;
+            }
+
+            .video {
+                position: absolute;
+                z-index: 1;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 406px;
+                height: 215px;
+
+
+            }
+
+            .video iframe {
+                width: 406px;
+                height: 215px;
+                border-radius: 15px;
+                box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+                -webkit-box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+            }
+
+            .BgTexto {
+                /* From https://css.glass */
+                background: rgba(255, 255, 255, 0.19);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(3.3px);
+                -webkit-backdrop-filter: blur(3.3px);
+                padding: 3%;
+                margin: 0 auto;
+                text-align: center;
+                width: 80%;
+                margin-top: px;
+                margin-bottom: 100px;
+            }
+
+            .divisor{
+                margin-top: 300px;
+            }
+            .texto {
+                text-align: justify;
+            }
+
+            footer {
+                position: relative;
+                top: 250px;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                background: #333;
+            }
+        }
+    </style>
+    <div class="row justify-content-md-center">
+        <nav class="container container-bc col-md-11">
+            <ul class="breadCrumb">
+                <li id="bci-video" class="breadCrumb-item"><a href="#video">Vídeo</a></li>
+                <li id="bci-mm" class="breadCrumb-item"><a href="#maremotriz">Maremotriz</a></li>
+                <li id="bci-om" class="breadCrumb-item"><a href="#ondamotriz">Ondamotriz</a></li>
+                <li id="bci-he" class="breadCrumb-item"><a href="#hidroeletricidade">HidroEletricidade</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="wave-container">
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#0099ff" fill-opacity="1"
+                d="M0,160L60,149.3C120,139,240,117,360,133.3C480,149,600,203,720,192C840,181,960,107,1080,112C1200,117,1320,203,1380,245.3L1440,288L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+            </path>
+        </svg>
+        <div class="blue-background" id="blue-background"></div>
+    </div>
+    <section class="section" id="video">
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/3cG1Lv5jCN8?si=VSogMLj47gB3wHH2" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <div class="divisor"></div>
+    <div class="BgTexto">
+        <section class="section" id="maremotriz">
+            <div class="texto">
+                <h3>
+                    Maremotriz
+                </h3>
+                <p>
+                    &nbsp O nome “energia da maré” vem do fato que o ser humano conseguiu transformar a energia cinética
+                    do
+                    movimento de oscilação no nível das águas oceânicas (maré), em eletricidade.
+
+                </p>
+                <p>
+                    &nbsp Essa ação também chamada de maremotriz é apenas possível com a criação de turbinas submersas
+                    em
+                    barragem que captam a água do mar, quando o nível do mar está alto as barragem armazenam a água, e
+                    quando a maré está baixa, eles liberam essa água armazenada que passa obrigatoriamente pelas
+                    turbinas.
+
+                </p>
+                <p>
+                    &nbsp Passando pelas turbinas, o desnível causado pela alteração da água movimenta as hélices que
+                    aciona o
+                    gerador, transformando energia cinética em eletricidade.
+
+                </p>
+                <p>
+                <h4>
+                    &nbsp Vantagens
+                </h4>
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item">
+                        1. Renovável e Limpa: Durante seu processo de exploração, a energia maremotriz é inesgotável e
+                        não produz poluentes.
+                    </li>
+                    <li class="list-group-item">
+                        2. Baixo Impacto Ambiental: Apresenta riscos mínimos ao meio ambiente.
+                    </li>
+                    <li class="list-group-item">
+                        3. Grande Volume de Água: Utiliza o vasto volume do mar para geração de energia.
+                    </li>
+                    <li class="list-group-item">
+                        4. Simplicidade Tecnológica: Não requer equipamentos muito sofisticados para a obtenção de
+                        energia elétrica.
+                    </li>
+                </ul>
+
+                <h4 class="mt-4">
+                    &nbsp Desvantagens
+                </h4>
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item">
+                        1. Fornecimento Instável: Dependente de fatores como vento e marés fortes.
+                    </li>
+                    <li class="list-group-item">
+                        2. Custo de Implantação Elevado: A construção de usinas maremotriz é dispendiosa.
+                    </li>
+                    <li class="list-group-item">
+                        3. Baixa Frequência das Ondas: As turbinas dependem de amplitudes de marés superiores a cinco
+                        metros para serem rentáveis.
+                    </li>
+                    <li class="list-group-item">
+                        4. Resistência e Sensibilidade das Instalações: As usinas devem ser fortes o suficiente para
+                        resistir a tempestades e, ao mesmo tempo, sensíveis para captar a energia das marés
+                    </li>
+                </ul>
+                </p>
+            </div>
+        </section>
+    </div>
+    <div class="BgTexto">
+        <section class="section" id="ondamotriz">
+            <div class="texto">
+                <h3>
+                    Ondamotriz
+                </h3>
+                <p>
+                    &nbsp Os processos de geração de energia a partir da queima de combustíveis fósseis estão entre as
+                    principais causas dos problemas ambientais enfrentados pelo mundo atualmente. Por isso o
+                    desenvolvimento de fontes de energia alternativas e renováveis tem crescido muito. Entre estas
+                    fontes, a energia contida nas ondas do oceano (energia ondomotriz) surge como uma das mais
+                    promissoras para a geração de energia elétrica.
+                </p>
+                <p>
+                    &nbsp As ondas são resultado do efeito do vento sobre a superfície do mar. Parte da energia cinética
+                    dos ventos é transferida para a água através do atrito entre as duas superfícies, gerando as ondas,
+                    que podem percorrer milhares de quilômetros com poucas perdas energéticas. Extrair a energia das
+                    ondas é um grande desafio tecnológico que nas últimas décadas despertou o interesse dos
+                    pesquisadores. Atualmente existem várias técnicas diferentes, algumas estão em fase de
+                    desenvolvimento e outras já estão em fase de testes.
+                </p>
+                <p>
+                    &nbsp A energia de ondas é constituída por módulos, sendo assim cada módulo é formado por um
+                    flutuador, um braço mecânico e uma bomba conectada a um circuito de água doce. A medida que as ondas
+                    passam, os flutuadores acabam subindo e descendo, e assim acionando as bombas hidráulicas, que fazem
+                    com que a água doce contida em um circuito fechado, circule em um local de alta pressão.
+                </p>
+                <p>
+                    &nbsp Essa água que sofre alta pressão vai para um acumulador, que tem água e ar comprimidos em uma
+                    câmara hiperbárica. Além das ondas, o mar oferece a possibilidade de geração de energia impulsionada
+                    pela movimentação das marés. De acordo com estudos, o Brasil tem condições de explorar todas essas
+                    fontes, em diferentes pontos ao longo da faixa litorânea
+                </p>
+                <p>
+                    &nbsp O aproveitamento da energia ondomotriz apresenta as seguintes vantagens: os oceanos ocupam
+                    mais de 70% da superfície terrestre, apresentando, portanto, uma enorme fonte de energia; é uma
+                    fonte de energia limpa e inesgotável; está disponível 24h por dia, sendo mais previsível que a
+                    energia solar e a eólica; existe de 15 a 20 vezes mais energia disponível por metro quadrado do que
+                    a solar ou a eólica; países com grandes áreas costeiras apresentam elevado potencial para o uso
+                    dessa fonte.
+                </p>
+                <p>
+                    &nbsp Com relação aos impactos negativos, os principais são: dependendo dos dispositivos utilizados,
+                    o ruído dos equipamentos pode afastar a fauna marítima e incomodar a população local; os
+                    dispositivos costeiros poderão causar um impacto visual; os sistemas de conversão de energia poderão
+                    interferir na dinâmica dos oceanos, alterando as correntes marítimas e o regime de marés e afetando
+                    a biodiversidade do meio; a navegação dos navios pode ser prejudicada.
+                </p>
+                <p>
+                    &nbsp A capacidade de geração de eletricidade da ondomotriz depende da altura e frequência das
+                    ondas, e do número de flutuadores em funcionamento. Em geral, uma instalação ondomotriz de 20 m2
+                    pode gerar 100 KW de energia, o que é 50 vezes mais do que uma usina solar de mesmo tamanho
+                </p>
+                <p>
+                    &nbsp No Brasil em 2012, foi instalado um projeto piloto de energia de ondas, a Usina do Porto do
+                    Pecém, está localizada no Ceará, o projeto que nasceu com uma parceria dos pesquisadores da
+                    Coordenação dos Programas de Pós-Graduação de Engenharia (COPPE), da Universidade Federal do Rio de
+                    Janeiro (UFRJ), é financiado pela Tractebel Energia, dentro do programa de P&D da Aneel, e conta com
+                    apoio do Governo do Estado do Ceará.
+                </p>
+            </div>
+        </section>
+    </div>
+    <div class="BgTexto">
+        <section class="section" id="hidroeletricidade">
+            <div class="texto">
+                <p>
+                    Aliquam ac nisl id nibh sodales bibendum non sodales erat. Nam pretium ut ex id interdum. Maecenas
+                    at
+                    ornare sem, a malesuada dolor. Sed augue dui, sodales non tellus nec, ultrices tincidunt lectus.
+                    Nullam
+                    cursus mauris luctus, porttitor lorem at, finibus ligula. Cras eu urna efficitur, tempor metus non,
+                    venenatis arcu. Ut tempor bibendum diam, ac fermentum ipsum congue ac. Aenean sit amet porttitor
+                    ligula.
+                    Ut elementum, tortor at porta consequat, leo velit molestie leo, sit amet porttitor turpis turpis at
+                    massa. Phasellus tristique mauris tortor, bibendum placerat nisi egestas nec. Nunc fringilla
+                    suscipit
+                    imperdiet. Integer maximus leo sit amet ipsum semper, at efficitur odio semper. Etiam efficitur vel
+                    risus ut imperdiet.
+                    Aliquam ac nisl id nibh sodales bibendum non sodales erat. Nam pretium ut ex id interdum. Maecenas
+                    at
+                    ornare sem, a malesuada dolor. Sed augue dui, sodales non tellus nec, ultrices tincidunt lectus.
+                    Nullam
+                    cursus mauris luctus, porttitor lorem at, finibus ligula. Cras eu urna efficitur, tempor metus non,
+                    venenatis arcu. Ut tempor bibendum diam, ac fermentum ipsum congue ac. Aenean sit amet porttitor
+                    ligula.
+                    Ut elementum, tortor at porta consequat, leo velit molestie leo, sit amet porttitor turpis turpis at
+                    massa. Phasellus tristique mauris tortor, bibendum placerat nisi egestas nec. Nunc fringilla
+                    suscipit
+                    imperdiet. Integer maximus leo sit amet ipsum semper, at efficitur odio semper. Etiam efficitur vel
+                    risus ut imperdiet.
+                    Aliquam ac nisl id nibh sodales bibendum non sodales erat. Nam pretium ut ex id interdum. Maecenas
+                    at
+                    ornare sem, a malesuada dolor. Sed augue dui, sodales non tellus nec, ultrices tincidunt lectus.
+                    Nullam
+                    cursus mauris luctus, porttitor lorem at, finibus ligula. Cras eu urna efficitur, tempor metus non,
+                    venenatis arcu. Ut tempor bibendum diam, ac fermentum ipsum congue ac. Aenean sit amet porttitor
+                    ligula.
+                    Ut elementum, tortor at porta consequat, leo velit molestie leo, sit amet porttitor turpis turpis at
+                    massa. Phasellus tristique mauris tortor, bibendum placerat nisi egestas nec. Nunc fringilla
+                    suscipit
+                    imperdiet. Integer maximus leo sit amet ipsum semper, at efficitur odio semper. Etiam efficitur vel
+                    risus ut imperdiet.
+                    Aliquam ac nisl id nibh sodales bibendum non sodales erat. Nam pretium ut ex id interdum. Maecenas
+                    at
+                    ornare sem, a malesuada dolor. Sed augue dui, sodales non tellus nec, ultrices tincidunt lectus.
+                    Nullam
+                    cursus mauris luctus, porttitor lorem at, finibus ligula. Cras eu urna efficitur, tempor metus non,
+                    venenatis arcu. Ut tempor bibendum diam, ac fermentum ipsum congue ac. Aenean sit amet porttitor
+                    ligula.
+                    Ut elementum, tortor at porta consequat, leo velit molestie leo, sit amet porttitor turpis turpis at
+                    massa. Phasellus tristique mauris tortor, bibendum placerat nisi egestas nec. Nunc fringilla
+                    suscipit
+                    imperdiet. Integer maximus leo sit amet ipsum semper, at efficitur odio semper. Etiam efficitur vel
+                    risus ut imperdiet.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer bg-dark mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div style="color: whitesmoke;" class="container">
+                    <img src="img/logo.png" alt="Logo" width="40px">
+                    N3JV
+                </div>
+                <div style="color: whitesmoke;" class="col-lg-12">
+                    <p class="copyright">© 2024 Criado por <a href="https://github.com/Vini150cius">Vini150cius</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
