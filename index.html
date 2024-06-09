@@ -32,7 +32,7 @@
             position: absolute;
             top: calc(100% - 3vh);
             width: 100%;
-            height: 325vh;
+            height: 380vh;
             background: #0099ff;
         }
 
@@ -81,23 +81,25 @@
             padding-bottom: 50px;
         }
 
-        .texto p, li {
+        .texto p,
+        li {
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
         }
 
-        .texto h3, h4 {
+        .texto h3,
+        h4 {
             font-family: "Bebas Neue", sans-serif;
             font-weight: 600;
             font-style: normal;
         }
 
-        .texto h3{
+        .texto h3 {
             font-size: 30pt;
             color: aliceblue;
         }
 
-        .texto h4{
+        .texto h4 {
             font-size: 20pt;
             color: rgb(214, 214, 214);
         }
@@ -163,20 +165,30 @@
 
 
         @media only screen and (max-width: 768px) {
+            html, body{
+                margin: 0;
+                padding: 0;
+            }
             .breadCrumb {
                 height: 100%;
+                padding: 0;
             }
 
             .breadCrumb-item {
                 margin: 0;
+                padding: 2px;
+                margin-right: 0;
+
+            }
+
+            .container-bc{
                 padding: 0;
-                margin-right: 4%;
-
+                margin: 0;
             }
-
             .container-bc a {
-            font-size: 9pt;            font-family: "Montserrat", sans-serif;
+                font-size: 9pt;
             }
+
             .wave-container {
                 padding-top: 40%;
                 position: relative;
@@ -187,7 +199,7 @@
                 position: absolute;
                 top: calc(100% - 1vh);
                 width: 100%;
-                height: 815vh;
+                height: 785vh;
                 background: #0099ff;
             }
 
@@ -195,17 +207,15 @@
                 position: absolute;
                 z-index: 1;
                 top: 40%;
-                left: 53%;
-                transform: translate(-50%, -50%);
-                width: 406px;
-                height: 215px;
+                width: 100%;
+                height: auto;
 
 
             }
 
             .video iframe {
-                width: 356px;
-                height: 235px;
+                width: 45vh;
+                height: 25vh;
                 border-radius: 15px;
                 box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
                 -webkit-box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
@@ -227,9 +237,10 @@
                 margin-bottom: 100px;
             }
 
-            .divisor{
+            .divisor {
                 margin-top: 300px;
             }
+
             .texto {
                 text-align: justify;
             }
@@ -410,56 +421,66 @@
     <div class="BgTexto">
         <section class="section" id="hidroeletricidade">
             <div class="texto">
+                <h3>Hidrelétricas</h3>
+                <h4>O que é? </h4>
                 <p>
-                    Aliquam ac nisl id nibh sodales bibendum non sodales erat. Nam pretium ut ex id interdum. Maecenas
-                    at
-                    ornare sem, a malesuada dolor. Sed augue dui, sodales non tellus nec, ultrices tincidunt lectus.
-                    Nullam
-                    cursus mauris luctus, porttitor lorem at, finibus ligula. Cras eu urna efficitur, tempor metus non,
-                    venenatis arcu. Ut tempor bibendum diam, ac fermentum ipsum congue ac. Aenean sit amet porttitor
-                    ligula.
-                    Ut elementum, tortor at porta consequat, leo velit molestie leo, sit amet porttitor turpis turpis at
-                    massa. Phasellus tristique mauris tortor, bibendum placerat nisi egestas nec. Nunc fringilla
-                    suscipit
-                    imperdiet. Integer maximus leo sit amet ipsum semper, at efficitur odio semper. Etiam efficitur vel
-                    risus ut imperdiet.
-                    Aliquam ac nisl id nibh sodales bibendum non sodales erat. Nam pretium ut ex id interdum. Maecenas
-                    at
-                    ornare sem, a malesuada dolor. Sed augue dui, sodales non tellus nec, ultrices tincidunt lectus.
-                    Nullam
-                    cursus mauris luctus, porttitor lorem at, finibus ligula. Cras eu urna efficitur, tempor metus non,
-                    venenatis arcu. Ut tempor bibendum diam, ac fermentum ipsum congue ac. Aenean sit amet porttitor
-                    ligula.
-                    Ut elementum, tortor at porta consequat, leo velit molestie leo, sit amet porttitor turpis turpis at
-                    massa. Phasellus tristique mauris tortor, bibendum placerat nisi egestas nec. Nunc fringilla
-                    suscipit
-                    imperdiet. Integer maximus leo sit amet ipsum semper, at efficitur odio semper. Etiam efficitur vel
-                    risus ut imperdiet.
-                    Aliquam ac nisl id nibh sodales bibendum non sodales erat. Nam pretium ut ex id interdum. Maecenas
-                    at
-                    ornare sem, a malesuada dolor. Sed augue dui, sodales non tellus nec, ultrices tincidunt lectus.
-                    Nullam
-                    cursus mauris luctus, porttitor lorem at, finibus ligula. Cras eu urna efficitur, tempor metus non,
-                    venenatis arcu. Ut tempor bibendum diam, ac fermentum ipsum congue ac. Aenean sit amet porttitor
-                    ligula.
-                    Ut elementum, tortor at porta consequat, leo velit molestie leo, sit amet porttitor turpis turpis at
-                    massa. Phasellus tristique mauris tortor, bibendum placerat nisi egestas nec. Nunc fringilla
-                    suscipit
-                    imperdiet. Integer maximus leo sit amet ipsum semper, at efficitur odio semper. Etiam efficitur vel
-                    risus ut imperdiet.
-                    Aliquam ac nisl id nibh sodales bibendum non sodales erat. Nam pretium ut ex id interdum. Maecenas
-                    at
-                    ornare sem, a malesuada dolor. Sed augue dui, sodales non tellus nec, ultrices tincidunt lectus.
-                    Nullam
-                    cursus mauris luctus, porttitor lorem at, finibus ligula. Cras eu urna efficitur, tempor metus non,
-                    venenatis arcu. Ut tempor bibendum diam, ac fermentum ipsum congue ac. Aenean sit amet porttitor
-                    ligula.
-                    Ut elementum, tortor at porta consequat, leo velit molestie leo, sit amet porttitor turpis turpis at
-                    massa. Phasellus tristique mauris tortor, bibendum placerat nisi egestas nec. Nunc fringilla
-                    suscipit
-                    imperdiet. Integer maximus leo sit amet ipsum semper, at efficitur odio semper. Etiam efficitur vel
-                    risus ut imperdiet.
+                    &nbsp A energia hidrelétrica e a energia que é obtida pelo movimento da água. Onde é aproveitado a
+                    energia potencial da água. Transformando a energia potencial em energia cinética, e então em
+                    eletricidade.
                 </p>
+                <h4>Como funciona?</h4>
+                <p>
+                    &nbsp A energia hidrelétrica necessita de uma grande quantidade de água e queda de água, por esse
+                    motivo, construção das barragens são essenciais. A conversão para a energia elétrica ocorre quando
+                    as turbinas giram ao receberem águas liberadas por comportas, utilizando a rotação dessas turbinas
+                    para a criação de energia.
+                </p>
+                <h4>É renovável? </h4>
+                <p>
+                    &nbsp É considerado uma fonte de energia renovável, pois depende do ciclo da água, pela energia
+                    solar, através da evaporação, condensação e precipitação, no entanto as barragens acumulam água,
+                    podendo continuar produzindo energia mesmo em períodos sem chuvas.
+                </p>
+                <h4>
+                    &nbsp Vantagens
+                </h4>
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item">
+                        Renovabilidade e Sustentabilidade;
+                    </li>
+                    <li class="list-group-item">
+                        Baixas Emissões de Gases de Efeito Estufa;
+                    </li>
+                    <li class="list-group-item">
+                        Confiabilidade e Estabilidade na Geração;
+                    </li>
+                    <li class="list-group-item">
+                        Controle de Cheias e Irrigação;
+                    </li>
+                    <li class="list-group-item">
+                        Armazenamento de Água para Uso Múltiplo;
+                    </li>
+                    <li class="list-group-item">
+                        Vida Útil Longa e Baixo Custo Operacional;
+                    </li>
+                    <li class="list-group-item">
+                        Geração Descentralizada;
+                    </li>
+                    <li class="list-group-item">
+                        Flexibilidade na Produção.
+                    </li>
+                </ul>
+
+                <h4 class="mt-4">
+                    &nbsp Desvantagens
+                </h4>
+                <p>
+                    &nbsp Suas desvantagens estão 100% ligadas ao meio ambiente, pois a construção de barragens,
+                    alagamentos de área, destruição de ecossistemas, extinção de espécies, destruição de comunidades,
+                    alterar padrões de sedimentação de rios.
+                </p>
+                <a href="https://www.todamateria.com.br/energia-hidreletrica/">Fonte:
+                    https://www.todamateria.com.br/energia-hidreletrica/</a>
             </div>
         </section>
     </div>

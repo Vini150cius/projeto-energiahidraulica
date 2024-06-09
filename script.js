@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const offsetPosition = targetPosition - (window.innerHeight / 2) + (targetElement.clientHeight / 2);
 
             window.scrollTo({
-                top: offsetPosition,
+                top: offsetPosition - 100,
                 behavior: 'smooth'
             });
         });
