@@ -32,7 +32,7 @@
             position: absolute;
             top: calc(100% - 3vh);
             width: 100%;
-            height: 380vh;
+            height: calc(250rem - 3vh);
             background: #0099ff;
         }
 
@@ -56,6 +56,7 @@
         .video iframe {
             width: 806px;
             height: 515px;
+            display: block;
             border-radius: 15px;
             box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
             -webkit-box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.75);
@@ -74,6 +75,7 @@
             text-align: center;
             width: 80%;
             margin-bottom: 2%;
+            position: relative;
         }
 
         .texto {
@@ -104,15 +106,7 @@
             color: rgb(214, 214, 214);
         }
 
-        footer {
-            position: relative;
-            top: 350px;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: #333;
-        }
+    
 
         .container-bc {
             background: rgba(0, 204, 255, 0.22);
@@ -165,10 +159,13 @@
 
 
         @media only screen and (max-width: 768px) {
-            html, body{
+
+            html,
+            body {
                 margin: 0;
                 padding: 0;
             }
+
             .breadCrumb {
                 height: 100%;
                 padding: 0;
@@ -181,10 +178,11 @@
 
             }
 
-            .container-bc{
+            .container-bc {
                 padding: 0;
                 margin: 0;
             }
+
             .container-bc a {
                 font-size: 9pt;
             }
@@ -214,6 +212,8 @@
             }
 
             .video iframe {
+                margin: 0 auto;
+                display: block;
                 width: 45vh;
                 height: 25vh;
                 border-radius: 15px;
@@ -485,7 +485,7 @@
         </section>
     </div>
 
-    <footer class="footer bg-dark mt-auto py-3">
+    <div class="footer bg-dark mt-auto py-3 BgTexto">
         <div class="container">
             <div class="row">
                 <div style="color: whitesmoke;" class="container">
@@ -497,7 +497,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
